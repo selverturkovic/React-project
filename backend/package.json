@@ -1,35 +1,38 @@
 {
   "name": "backend",
-  "private": true,
   "version": "0.1.0",
+  "private": true,
   "description": "A Strapi application",
+  "license": "MIT",
+  "author": {
+    "name": "A Strapi developer"
+  },
   "scripts": {
+    "build": "strapi build",
     "develop": "strapi develop",
     "start": "strapi start",
-    "build": "strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
   "dependencies": {
-    "@strapi/strapi": "4.15.5",
-    "@strapi/plugin-users-permissions": "4.15.5",
-    "@strapi/plugin-i18n": "4.15.5",
-    "@strapi/plugin-cloud": "4.15.5",
+    "@strapi/plugin-cloud": "4.16.0",
+    "@strapi/plugin-i18n": "4.16.0",
+    "@strapi/plugin-users-permissions": "4.16.0",
+    "@strapi/strapi": "4.16.0",
     "better-sqlite3": "8.6.0",
+    "lodash.set": "^4.3.2",
+    "mime-types": "^2.1.27",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "5.3.4",
     "styled-components": "5.3.3"
   },
-  "author": {
-    "name": "A Strapi developer"
-  },
-  "strapi": {
-    "uuid": "ce603775-c3ab-4cc3-b4a4-993585ff7424"
-  },
+  "devDependencies": {},
   "engines": {
     "node": ">=18.0.0 <=20.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT"
+  "strapi": {
+    "uuid": "0a85b885-1e5a-45dc-b12b-f6056da59c5f",
+    "template": "ecommerce"
+  }
 }
