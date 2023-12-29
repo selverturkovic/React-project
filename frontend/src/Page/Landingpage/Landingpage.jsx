@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/header.scss";
 import { AppBar, Toolbar, Typography, Button, IconButton } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+// import MenuIcon from "@mui/icons-material/Menu";
 import Logo from "./Logo";
 import Korpa from "./korpa";
 import "../styles/mainLandingpage.scss";
@@ -11,30 +11,6 @@ import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
 function Landingpage() {
   return (
     <div className="glavniDiv">
-      <header className="Navbar">
-        <AppBar>
-          <Toolbar className="Toolbar">
-            <Logo />
-
-            {/* Naslov AppBar-a */}
-            {/* <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              My App
-            </Typography> */}
-
-            {/* Navigacioni linkovi ili dugmadi */}
-            <div className="linkovi">
-              <Button color="inherit">Home</Button>
-              <Button color="inherit">Product</Button>
-              <Button color="inherit">Category</Button>
-
-              {/* Dugme za login (primer) */}
-              <Button color="inherit">Login</Button>
-              <Korpa />
-            </div>
-          </Toolbar>
-        </AppBar>
-        );
-      </header>
       <main className="main">
         <div className="maindiv">
           <div className="Glavninaslov">
@@ -74,10 +50,10 @@ function Landingpage() {
           </div>
         </div>
         <div className="maindiv">
-          <div class="naslovi">
-            <p class="linija1"></p>
-            <p class="naslov">Top brands</p>
-            <p class="linija1"></p>
+          <div className="naslovi">
+            <p className="linija1"></p>
+            <p className="naslov">Top brands</p>
+            <p className="linija1"></p>
           </div>
         </div>
         <div className="maindiv">
@@ -118,8 +94,8 @@ function Landingpage() {
             src="https://static.wixstatic.com/media/ea26fd_b068bc852e404ce7ad4a93e0792ec4a0~mv2_d_2134_1300_s_2.jpg/v1/fill/w_980,h_903,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ea26fd_b068bc852e404ce7ad4a93e0792ec4a0~mv2_d_2134_1300_s_2.jpg"
             alt=""
           />
-          <div class="naslovi naslovi1">
-            <p class="naslov naslov1">Our Bestsellers</p>
+          <div className="naslovi naslovi1">
+            <p className="naslov naslov1">Our Bestsellers</p>
           </div>
           <div className="box">
             <div className="boxproizvoda">
@@ -173,8 +149,8 @@ function Landingpage() {
               <button className="shopNow customButton">Add to card</button>
             </div>
           </div>
-          <div class="naslovi naslovi1 naslovi2">
-            <p class="naslov naslov1">New products</p>
+          <div className="naslovi naslovi1 naslovi2">
+            <p className="naslov naslov1">New products</p>
           </div>
           <div className="box box1">
             <div className="boxproizvoda">
@@ -230,10 +206,12 @@ function Landingpage() {
           </div>
         </div>
         <div className="maindiv maindiv1">
-          <p class=" naslov1 naslov2">Testimoinals</p>
+          <p className=" naslov1 naslov2">Testimoinals</p>
           <div className="boxTestiominal">
             <div className="boxTestiominal1">
-              <ArrowCircleDownIcon fontSize="large">Arrow</ArrowCircleDownIcon>
+              <ArrowCircleDownIcon sx={{ fontSize: 60 }}>
+                Arrow
+              </ArrowCircleDownIcon>
               <p className="paragraf">
                 “I'm a testimonial. Click to edit me and add text that says
                 something nice about you and your services. Let your customers
@@ -242,66 +220,30 @@ function Landingpage() {
               <p className="paragraf1"> - Robert King -</p>
             </div>
             <div className="boxTestiominal1">
-              <ArrowCircleDownIcon fontSize="large">Arrow</ArrowCircleDownIcon>
+              <ArrowCircleDownIcon sx={{ fontSize: 60 }}>
+                Arrow
+              </ArrowCircleDownIcon>
               <p className="paragraf">
                 “I'm a testimonial. Click to edit me and add text that says
                 something nice about you and your services. Let your customers
                 review you and tell their friends how great you are.”
               </p>
-              <p className="paragraf1"> - Robert King -</p>
+              <p className="paragraf1"> - VISION electronics -</p>
             </div>
             <div className="boxTestiominal1">
-              <ArrowCircleDownIcon fontSize="large">Arrow</ArrowCircleDownIcon>
+              <ArrowCircleDownIcon sx={{ fontSize: 60 }}>
+                Arrow
+              </ArrowCircleDownIcon>
               <p className="paragraf">
                 “I'm a testimonial. Click to edit me and add text that says
                 something nice about you and your services. Let your customers
                 review you and tell their friends how great you are.”
               </p>
-              <p className="paragraf1"> - Robert King -</p>
+              <p className="paragraf1"> - Gary Lewis - </p>
             </div>
           </div>
         </div>
       </main>
-      <footer>
-        <div className="divFootera">
-          <div className="divFootera1">
-            <Logo s />
-            <h1>GAMMA</h1>
-            <h3>Drones and Action Cammeras</h3>
-          </div>
-          <div className="divFootera1">
-            <h3>Shop</h3>
-            <p>Drones</p>
-            <p>Cameras</p>
-            <p>Accessories</p>
-            <p>Sale</p>
-          </div>
-          <div className="divFootera1">
-            <h3>Info</h3>
-            <p>About</p>
-            <p>Forum</p>
-            <p>Contact</p>
-            <p></p>
-          </div>
-          <div className="divFootera1">
-            <h3>Support</h3>
-            <p>FAQ</p>
-            <p>Shipping & Returns</p>
-            <p>Store Policy</p>
-            <p>Payment Methods</p>
-          </div>
-          <div className="divFootera1">
-            <h3>Contact</h3>
-            <p>Customer Service:</p>
-            <p>123-456-7890</p>
-            <p>info@my-domain.com</p>
-            <p>Sale</p>
-          </div>
-        </div>
-        <div className="footer2">
-          © 2035 by Gamma. Powered and secured by Wix
-        </div>
-      </footer>
     </div>
   );
 }
