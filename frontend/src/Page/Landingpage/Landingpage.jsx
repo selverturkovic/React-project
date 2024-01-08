@@ -8,7 +8,11 @@ import "../styles/mainLandingpage.scss";
 import "../styles/footer.scss";
 
 import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
+import { useTheme } from "@emotion/react";
+
 function Landingpage() {
+  const theme = useTheme();
+
   return (
     <div className="glavniDiv">
       <main className="main">
@@ -17,8 +21,11 @@ function Landingpage() {
             <h2 className="h2">Profesional</h2>
             <h2 className="h2">Drone</h2>
             <h2 className="h2">Solutions</h2>
-            <button className="shopNow">Shop now</button>
+            <Button variant="contained" color="primary">
+              Shop now
+            </Button>
           </div>
+
           <img
             className="slikaDrona"
             src="https://static.wixstatic.com/media/ea26fd_0896b1697c1647f0832db31f200aa5aa~mv2_d_3516_1665_s_2.jpg/v1/fill/w_653,h_555,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ea26fd_0896b1697c1647f0832db31f200aa5aa~mv2_d_3516_1665_s_2.jpg"
@@ -34,7 +41,9 @@ function Landingpage() {
             />
             <div className="divnaslici">
               <p className="camerap">Thermal camera collection</p>
-              <button className="shopNow">Shop now</button>
+              <Button variant="contained" color="primary">
+                Shop now
+              </Button>
             </div>
           </div>
           <div className="dronovi">
@@ -45,7 +54,9 @@ function Landingpage() {
             />
             <div className="divnaslici">
               <p className="camerap">Thermal camera collection</p>
-              <button className="shopNow">Shop now</button>
+              <Button variant="contained" color="primary">
+                Shop now
+              </Button>
             </div>
           </div>
         </div>
@@ -106,7 +117,9 @@ function Landingpage() {
               />
               <p>Im a product</p>
               <p className="cena">$2250.00</p>
-              <button className="shopNow customButton">Add to card</button>
+              <Button variant="contained" color="secondary">
+                Add to card
+              </Button>
             </div>
             <div className="boxproizvoda">
               <img
@@ -116,7 +129,9 @@ function Landingpage() {
               />
               <p>Im a product</p>
               <p className="cena">$2250.00</p>
-              <button className="shopNow customButton">Add to card</button>
+              <Button variant="contained" color="secondary">
+                Add to card
+              </Button>
             </div>
             <div className="boxproizvoda">
               <img
@@ -126,7 +141,9 @@ function Landingpage() {
               />
               <p>Im a product</p>
               <p className="cena">$2250.00</p>
-              <button className="shopNow customButton">Add to card</button>
+              <Button variant="contained" color="secondary">
+                Add to card
+              </Button>
             </div>
             <div className="boxproizvoda">
               <img
@@ -136,7 +153,9 @@ function Landingpage() {
               />
               <p>Im a product</p>
               <p className="cena">$2250.00</p>
-              <button className="shopNow customButton">Add to card</button>
+              <Button variant="contained" color="secondary">
+                Add to card
+              </Button>
             </div>
             <div className="boxproizvoda">
               <img
@@ -146,7 +165,9 @@ function Landingpage() {
               />
               <p>Im a product</p>
               <p className="cena">$2250.00</p>
-              <button className="shopNow customButton">Add to card</button>
+              <Button variant="contained" color="secondary">
+                Add to card
+              </Button>
             </div>
           </div>
           <div className="naslovi naslovi1 naslovi2">
@@ -161,7 +182,9 @@ function Landingpage() {
               />
               <p>Im a product</p>
               <p className="cena">$2250.00</p>
-              <button className="shopNow customButton">Add to card</button>
+              <Button variant="contained" color="secondary">
+                Add to card
+              </Button>
             </div>
             <div className="boxproizvoda">
               <img
@@ -171,8 +194,11 @@ function Landingpage() {
               />
               <p>Im a product</p>
               <p className="cena">$2250.00</p>
-              <button className="shopNow customButton">Add to card</button>
+              <Button variant="contained" color="secondary">
+                Add to card
+              </Button>
             </div>
+
             <div className="boxproizvoda">
               <img
                 className="slikaproizvoda"
@@ -181,7 +207,9 @@ function Landingpage() {
               />
               <p>Im a product</p>
               <p className="cena">$2250.00</p>
-              <button className="shopNow customButton">Add to card</button>
+              <Button variant="contained" color="secondary">
+                Add to card
+              </Button>
             </div>
             <div className="boxproizvoda">
               <img
@@ -191,7 +219,9 @@ function Landingpage() {
               />
               <p>Im a product</p>
               <p className="cena">$2250.00</p>
-              <button className="shopNow customButton">Add to card</button>
+              <Button variant="contained" color="secondary">
+                Add to card
+              </Button>
             </div>
             <div className="boxproizvoda">
               <img
@@ -201,7 +231,9 @@ function Landingpage() {
               />
               <p>Im a product</p>
               <p className="cena">$2250.00</p>
-              <button className="shopNow customButton">Add to card</button>
+              <Button variant="contained" color="secondary">
+                Add to card
+              </Button>
             </div>
           </div>
         </div>

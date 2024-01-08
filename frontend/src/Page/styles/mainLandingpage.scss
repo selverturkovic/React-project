@@ -5,7 +5,7 @@
 .maindiv {
   display: flex;
   justify-content: center;
-  width: 86.88%;
+
   margin: auto;
 }
 .Glavninaslov {
@@ -24,21 +24,8 @@
   font-size: 50px;
   font-style: italic;
 }
-.shopNow {
-  border: 1px solid white;
-  border-radius: 30px;
-  background-color: #1e68cb;
-  color: white;
-  padding: 10px 20px;
-  transition: background-color 0.5s ease-in-out;
 
-  &:hover {
-    background-color: #ffffff;
-    color: #1e68cb;
-  }
-}
 .slikaDrona {
-  min-width: 653px;
   height: 555px;
   width: 70%;
 }
@@ -144,18 +131,7 @@ p {
   width: 189px;
   height: 142px;
 }
-.customButton {
-  border-radius: 20px;
-  background-color: rgb(10, 35, 68);
-  opacity: 0;
 
-  transition: opacity 0.3s ease;
-  &:hover {
-    opacity: 1;
-    background-color: rgb(10, 35, 68);
-    color: white;
-  }
-}
 .naslovi2 {
   top: 500px;
 }
@@ -199,4 +175,52 @@ p {
 }
 .paragraf1 {
   font-size: 20px;
+  text-align: center;
+}
+@media only screen and (max-width: 1024px) {
+  .maindiv,
+  .boxTestiominal,
+  .box,
+  .box1 {
+    flex-direction: column;
+
+    height: auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .Glavninaslov,
+  .slikaDrona {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .divzaslike {
+    padding: 20px 0px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .glavniDiv1,
+  .planina {
+    height: 4700px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .naslovi2 {
+    top: 2350px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .box1 {
+    top: 2500px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .slikaproizvoda {
+    width: 400px;
+    height: 300px;
+  }
 }
