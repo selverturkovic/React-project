@@ -5,11 +5,11 @@
     "singularName": "product",
     "pluralName": "products",
     "displayName": "Product",
-    "name": "product"
+    "name": "product",
+    "description": ""
   },
   "options": {
-    "increments": true,
-    "timestamps": true
+    "draftAndPublish": false
   },
   "attributes": {
     "title": {
@@ -21,14 +21,16 @@
       "required": true
     },
     "price": {
-      "type": "float"
+      "type": "float",
+      "required": true
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "slug": {
       "type": "uid",

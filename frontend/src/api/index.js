@@ -1,4 +1,4 @@
 import axios from "axios";
-const blogApi = axios.create({
-  baseURL: "http://localhost:1337/",
+export const ecommerceApi = axios.create({
+  baseURL: "http://localhost:1337",
 });

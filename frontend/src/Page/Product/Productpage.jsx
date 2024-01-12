@@ -64,48 +64,47 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fetchEcommerceData } from "../../slices/index";
+import { Button } from "@mui/material";
+import "../styles/productpage.scss";
+import "../styles/mainLandingPage.scss";
+
+import { fetchProduct } from "../../slices/product";
+import { getImageUrl } from "../../utils";
 
 const Productpage = () => {
+  const data = useParams();
   const dispatch = useDispatch();
-  const { id } = useParams();
-  const ecommerceData = useSelector((state) => state.ecommerce.data);
+  const productState = useSelector((state) => state.product);
 
-  // const ecommerceData = useSelector((state) =>
-  //   state.ecommerce.data.find((item) => item.id === parseInt(id))
-  // );
-  console.log(ecommerceData);
+  // const ecommerceData = useSelector((state) => state.ecommerce.data);
+
+  console.log(productState);
   const status = useSelector((state) => state.ecommerce.status);
   const error = useSelector((state) => state.ecommerce.error);
 
   useEffect(() => {
-    dispatch(fetchEcommerceData(id));
-  }, [dispatch, id]);
+    dispatch(fetchProduct(data.id));
+  }, []);
 
-  if (ecommerceData.length === 0) {
-    return <div>Loading...</div>;
-  }
-
-  if (status === "loading") {
-    return <p>Loading...</p>;
-  }
-
-  if (status === "failed") {
-    return <p>Error: {error}</p>;
-  }
-
-  if (!ecommerceData) {
-    return <p>Product not found</p>;
-  }
   return (
     <div>
-      {/* {ecommerceData.data.map((item) => ( */}
-      <div>
-        <h2>{ecommerceData.data.attributes.title}</h2>
-        <p>{id}</p>
-        {/* Ostale informacije o proizvodu */}
+      <div key={productState.id} className="boxproizvoda boxproizvoda1">
+        <img
+          className="slikaproizvoda slikaproizvoda1"
+          src={getImageUrl(
+            productState?.product?.data?.attributes?.image.data.attributes.url
+          )}
+          alt=""
+        />
+        <p>Ime: {productState?.product?.data?.attributes?.title}</p>
+        <p>Cena: {productState?.product?.data?.attributes?.price}</p>
+        <p>
+          Opis proizvoda: {productState?.product?.data?.attributes?.description}
+        </p>
+        <Button variant="contained" color="secondary">
+          Add to card
+        </Button>
       </div>
-      {/* ))} */}
     </div>
   );
 };

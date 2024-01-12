@@ -2,15 +2,14 @@ import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
-import Logo from "../Page/Landingpage/Logo";
-import Korpa from "../Page/Landingpage/korpa";
+import Logo from "../../Page/Landingpage/Logo";
+import Korpa from "../../Page/Landingpage/korpa";
 
 import { Button } from "@mui/material";
-import "../Page/styles/header.scss";
+import "../../Page/styles/header.scss";
 import { useLocation, useNavigate } from "react-router-dom";
-import "../Page/styles/footer.scss";
+import "../../Page/styles/footer.scss";
 const { Header, Content, Footer } = {
   Header: Toolbar,
   Content: Container,

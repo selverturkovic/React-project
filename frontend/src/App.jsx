@@ -4,10 +4,11 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Landingpage from "./Page/Landingpage/Landingpage";
 import Categorypage from "./Page/Category/Categorypage";
 import Productpage from "./Page/Product/Productpage";
-import Layout from "./components/Layout";
+import Layout from "./components/Layout/Layout";
 import { useSelector } from "react-redux";
 import { ThemeProvider } from "@emotion/react";
-import theme from "./components/theme";
+import theme from "./components/theme/theme";
+import { paths } from "./utils";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,14 +21,14 @@ const router = createBrowserRouter([
     ),
     children: [
       { index: true, element: <Landingpage /> },
-      { path: "category", element: <Categorypage /> },
-      { path: "product/:id", element: <Productpage /> },
+      { path: paths.category, element: <Categorypage /> },
+      { path: paths.product, element: <Productpage /> },
     ],
   },
 ]);
 
 function App() {
-  const blogsState = useSelector((state) => state.ecommerce);
+  const ecommerceState = useSelector((state) => state.ecommerce);
 
   const [count, setCount] = useState(0);
 

@@ -406,16 +406,16 @@ export interface ApiProductProduct extends Schema.CollectionType {
     pluralName: 'products';
     displayName: 'Product';
     name: 'product';
+    description: '';
   };
   options: {
-    increments: true;
-    timestamps: true;
+    draftAndPublish: false;
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
     description: Attribute.String & Attribute.Required;
-    price: Attribute.Float;
-    image: Attribute.Media;
+    price: Attribute.Float & Attribute.Required;
+    image: Attribute.Media & Attribute.Required;
     slug: Attribute.UID<'api::product.product', 'title'>;
     categories: Attribute.Relation<
       'api::product.product',
