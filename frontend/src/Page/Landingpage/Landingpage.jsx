@@ -2,10 +2,8 @@ import React, { useEffect } from "react";
 import "../styles/header.scss";
 import "../styles/mainLandingpage.scss";
 import "../styles/footer.scss";
-
-import { useTheme } from "@emotion/react";
 import Proizvodi from "../../components/products/Proizvodi";
-import { fetchBestseller, fetchNewProducts } from "../../slices";
+import { fetchBestseller, fetchNewProducts } from "../../slices/categories";
 import { useDispatch, useSelector } from "react-redux";
 import Prvideolanding from "../../components/Prvideolanding/Prvideolanding";
 import Camera from "../../components/Camera/Camera";
@@ -13,16 +11,17 @@ import Topbrands from "../../components/Topbrands/Topbrands";
 import Testimonials from "../../components/Testimoinals/Testimonials";
 
 function Landingpage() {
-  // const theme = useTheme();
-
   const Bestseller = useSelector((state) => state.ecommerce.bestseller);
   const newProducts = useSelector((state) => state.ecommerce.back);
+
   const dispatch = useDispatch();
   console.log(Bestseller);
+
   useEffect(() => {
     dispatch(fetchBestseller());
     dispatch(fetchNewProducts());
   }, []);
+
   return (
     <div className="glavniDiv">
       <main className="main">

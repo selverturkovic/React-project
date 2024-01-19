@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { ecommerceApi } from "../api"; // Assuming you have axios for making HTTP requests
+import { ecommerceApi } from "../api";
 
-// Async thunk for fetching ecommerce data
 export const fetchBestseller = createAsyncThunk(
   "ecommerce/fetchBestseller",
   async () => {

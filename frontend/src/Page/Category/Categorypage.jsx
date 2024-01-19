@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
 import Proizvodi from "../../components/products/Proizvodi";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -8,18 +7,20 @@ import {
   fetchCameras,
   fetchDrons,
   fetchNewProducts,
-} from "../../slices";
+} from "../../slices/categories";
 import "../styles/categorypage.scss";
 import { Typography } from "@mui/material";
 function Categorypage() {
-  const data = useParams();
   const Bestseller = useSelector((state) => state.ecommerce.bestseller);
   const newProducts = useSelector((state) => state.ecommerce.back);
   const Dronovi = useSelector((state) => state.ecommerce.dronovi);
   const Cameras = useSelector((state) => state.ecommerce.cameras);
   const Acessories = useSelector((state) => state.ecommerce.acessories);
+
   const dispatch = useDispatch();
+
   console.log(Bestseller);
+
   useEffect(() => {
     dispatch(fetchBestseller());
     dispatch(fetchNewProducts());
@@ -27,6 +28,7 @@ function Categorypage() {
     dispatch(fetchCameras());
     dispatch(fetchAcessories());
   }, []);
+
   return (
     <>
       <Typography className="naslovi" variant="h2">

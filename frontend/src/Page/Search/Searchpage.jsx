@@ -1,19 +1,17 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { searchProducts } from "../../slices/search";
-import { getImageUrl } from "../../utils";
+import { getImageUrl, paths } from "../../utils";
 import { Button } from "@mui/material";
-import "../styles/categorypage.scss";
-import "../styles/mainLandingpage.scss";
-import "../styles/productpage.scss";
+import "../styles/searchpage.scss";
+
 function Searchpage() {
   const params = useParams();
   const searchState = useSelector((state) => state.search);
   const dispatch = useDispatch();
-
   const list = searchState?.list?.data;
-
+  const navigate = useNavigate();
   console.log(list);
 
   useEffect(() => {
@@ -21,14 +19,17 @@ function Searchpage() {
   }, [params.q, dispatch]);
 
   return (
-    <div>
+    <div className="list">
       {list &&
         list.map((item, index) => {
           return (
-            <div key={index}>
+            <div
+              key={index}
+              onClick={() => navigate(paths.product.replace(":id", item.id))}
+            >
               <div className="boxproizvoda boxproizvoda1">
                 <img
-                  className="slikaproizvoda"
+                  className="slikaproizvoda slika"
                   src={getImageUrl(
                     item?.attributes?.image?.data?.attributes.url
                   )}

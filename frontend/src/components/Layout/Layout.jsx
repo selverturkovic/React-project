@@ -25,16 +25,19 @@ const MyLayout = (props) => {
   const [searchValue, setSearchValue] = useState(q);
 
   const handleSearch = () => {
-    navigate(paths.search.replace(":q", searchValue));
+    if (searchValue.trim() !== "") {
+      setSearchValue(searchValue);
+      navigate(paths.search.replace(":q", searchValue));
+    } else {
+      navigate("/");
+    }
   };
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
       handleSearch();
     }
   };
-  const handleClick = () => {
-    navigate("/product/:id");
-  };
+
   const Click1 = () => {
     navigate("/category");
   };
@@ -56,9 +59,7 @@ const MyLayout = (props) => {
           <Button onClick={Click2} color="inherit">
             Home
           </Button>
-          {/* <Button onClick={handleClick} color="inherit">
-            Product
-          </Button> */}
+
           <Button onClick={Click1} color="inherit">
             Category
           </Button>
