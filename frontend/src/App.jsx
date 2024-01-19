@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import { ThemeProvider } from "@emotion/react";
 import theme from "./components/theme/theme";
 import { paths } from "./utils";
+import Searchpage from "./Page/Search/searchPage";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
       { index: true, element: <Landingpage /> },
       { path: paths.category, element: <Categorypage /> },
       { path: paths.product, element: <Productpage /> },
+      { path: paths.search, element: <Searchpage /> },
     ],
   },
 ]);

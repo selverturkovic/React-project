@@ -13,7 +13,7 @@ import Topbrands from "../../components/Topbrands/Topbrands";
 import Testimonials from "../../components/Testimoinals/Testimonials";
 
 function Landingpage() {
-  const theme = useTheme();
+  // const theme = useTheme();
 
   const Bestseller = useSelector((state) => state.ecommerce.bestseller);
   const newProducts = useSelector((state) => state.ecommerce.back);

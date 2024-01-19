@@ -1,14 +1,19 @@
 import { Button } from "@mui/material";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Prvideolanding() {
+  const navigate = useNavigate();
+  const Click1 = () => {
+    navigate("/category");
+  };
   return (
     <div className="maindiv">
       <div className="Glavninaslov">
         <h2 className="h2">Profesional</h2>
         <h2 className="h2">Drone</h2>
         <h2 className="h2">Solutions</h2>
-        <Button variant="contained" color="primary">
+        <Button variant="contained" color="primary" onClick={Click1}>
           Shop now
         </Button>
       </div>

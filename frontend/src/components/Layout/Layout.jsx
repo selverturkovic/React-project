@@ -1,31 +1,37 @@
-import React from "react";
-import AppBar from "@mui/material/AppBar";
+import React, { useState } from "react";
 import Toolbar from "@mui/material/Toolbar";
 import Container from "@mui/material/Container";
 import Paper from "@mui/material/Paper";
 import Logo from "../../Page/Landingpage/Logo";
 import Korpa from "../../Page/Landingpage/korpa";
+import SearchIcon from "@mui/icons-material/Search";
 
-import { Button } from "@mui/material";
+import { Button, IconButton, TextField } from "@mui/material";
 import "../../Page/styles/header.scss";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "../../Page/styles/footer.scss";
+import { paths } from "../../utils";
 const { Header, Content, Footer } = {
   Header: Toolbar,
   Content: Container,
   Footer: Paper,
 };
-// const items = [
-//   { label: "Home", key: "1" },
-//   { label: "products", key: "2" },
-// ];
 
 const MyLayout = (props) => {
   const { children } = props;
   const navigate = useNavigate();
-  const location = useLocation();
-  // const isLandingPage = location.pathname === "/";
+  const { q } = useParams();
 
+  const [searchValue, setSearchValue] = useState(q);
+
+  const handleSearch = () => {
+    navigate(paths.search.replace(":q", searchValue));
+  };
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
+  };
   const handleClick = () => {
     navigate("/product/:id");
   };
@@ -35,9 +41,7 @@ const MyLayout = (props) => {
   const Click2 = () => {
     navigate("/");
   };
-  // const {
-  //   token: { colorBgContainer, borderRadiusLG },
-  // } = theme.useToken();
+
   return (
     <div>
       {/* Header */}
@@ -52,27 +56,34 @@ const MyLayout = (props) => {
           <Button onClick={Click2} color="inherit">
             Home
           </Button>
-          <Button onClick={handleClick} color="inherit">
+          {/* <Button onClick={handleClick} color="inherit">
             Product
-          </Button>
+          </Button> */}
           <Button onClick={Click1} color="inherit">
             Category
           </Button>
-
-          <Button color="inherit">Login</Button>
+          <TextField
+            placeholder="search"
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
+            onKeyDown={handleKeyPress}
+            style={{
+              width: 200,
+            }}
+            InputProps={{
+              startAdornment: (
+                <IconButton onClick={handleSearch}>
+                  <SearchIcon />
+                </IconButton>
+              ),
+            }}
+          />
           <Korpa />
         </Toolbar>
       </Header>
 
-      {/* Main Content */}
       <Content style={{ padding: "0px" }}>{children}</Content>
-      {/* Footer */}
       <Footer>
-        {/* <AppBar position="static" style={{ marginTop: "20px" }}>
-          <Toolbar>
-            <Typography variant="body1">Footer Content</Typography>
-          </Toolbar>
-        </AppBar> */}
         <footer>
           <div className="divFootera">
             <div className="divFootera1 footer1">

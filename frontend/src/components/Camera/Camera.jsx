@@ -1,7 +1,12 @@
 import { Button } from "@mui/material";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Camera() {
+  const navigate = useNavigate();
+  const Click1 = () => {
+    navigate("/category");
+  };
   return (
     <div className="maindiv">
       <div className="dronovi">
@@ -12,7 +17,7 @@ function Camera() {
         />
         <div className="divnaslici">
           <p className="camerap">Thermal camera collection</p>
-          <Button variant="contained" color="primary">
+          <Button variant="contained" color="primary" onClick={Click1}>
             Shop now
           </Button>
         </div>
@@ -25,7 +30,7 @@ function Camera() {
         />
         <div className="divnaslici">
           <p className="camerap">Essential drones accessories</p>
-          <Button variant="contained" color="primary">
+          <Button variant="contained" color="primary" onClick={Click1}>
             Shop now
           </Button>
         </div>

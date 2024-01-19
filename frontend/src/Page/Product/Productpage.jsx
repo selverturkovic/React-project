@@ -76,11 +76,7 @@ const Productpage = () => {
   const dispatch = useDispatch();
   const productState = useSelector((state) => state.product);
 
-  // const ecommerceData = useSelector((state) => state.ecommerce.data);
-
   console.log(productState);
-  const status = useSelector((state) => state.ecommerce.status);
-  const error = useSelector((state) => state.ecommerce.error);
 
   useEffect(() => {
     dispatch(fetchProduct(data.id));
